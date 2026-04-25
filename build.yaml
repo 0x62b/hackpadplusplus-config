@@ -22,5 +22,5 @@ board: [ "seeed_xiao" ]
 shield: [ "hackpadplusplus" ]
 
 include:
-  - board: seeed_xiao
+  - board: seeeduino_xiao
     shield: hackpadplusplus
