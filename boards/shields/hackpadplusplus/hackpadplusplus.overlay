@@ -1,0 +1,59 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+#include "hackpadplusplus-layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &default_layout;
+    };
+
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&xiao_d 1 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 2 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    default_transform: default_transform {
+        compatible = "zmk,matrix-transform";
+        columns = <3>;
+        rows = <2>;
+
+        map = <
+            RC(0, 0) RC(0, 1) RC(0,2)
+            RC(1, 0) RC(1, 1) RC(1,2)
+        >;
+    };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <15>;
+        status = "disabled";
+    }
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
+    };
+
+    &left_encoder {
+        status = "okay";
+    };
+
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
