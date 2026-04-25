@@ -18,7 +18,7 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-board: [ "seeed_xiao" ]
+board: [ "seeeduino_xiao" ]
 shield: [ "hackpadplusplus" ]
 
 include:
