@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: module_a_base
+    - name: hackpadplusplus-config
       url-base: https://github.com/0x62b
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: hackpadplusplus
+    - name: hackpadplusplus-config
       remote: hackpadplusplus-config
       revision: main
   self:
