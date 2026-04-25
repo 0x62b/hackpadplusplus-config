@@ -23,4 +23,4 @@ shield: [ "hackpadplusplus" ]
 
 include:
   - board: seeed_xiao
-    sheild: hackpadplusplus
+    shield: hackpadplusplus
