@@ -10,7 +10,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: hackpadplusplus
-      remote: hackpadplusplus
+      remote: hackpadplusplus-config
       revision: main
   self:
     path: config
