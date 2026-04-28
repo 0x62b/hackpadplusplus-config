@@ -9,11 +9,7 @@ features:
   - keys
   - display
   - encoder
-  - underglow
   - studio
-
-exposes:
-  - i2c_oled
 
 requires:
   - seeed_xiao
