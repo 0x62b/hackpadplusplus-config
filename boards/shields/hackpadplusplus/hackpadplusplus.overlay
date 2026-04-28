@@ -41,7 +41,7 @@
         b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <15>;
         status = "disabled";
-    }
+    };
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
