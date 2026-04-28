@@ -7,8 +7,6 @@ url: https://github.com/0x62b/hackpadplusplus
 
 features:
   - keys
-  - display
-  - encoder
   - studio
 
 requires:
