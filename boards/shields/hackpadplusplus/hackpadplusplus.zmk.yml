@@ -12,5 +12,8 @@ features:
   - underglow
   - studio
 
+exposes:
+  - i2c_oled
+
 requires:
   - seeed_xiao
